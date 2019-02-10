@@ -1,0 +1,34 @@
+spring:
+  # 数据库连接
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        auto: update
+
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+
+
+shiro:
+  user:
+    loginUrl: /login
+    successUrl: /index
+  cookie:
+    # 设置Cookie的域名 默认空，即当前访问的域名
+    domain:
+    # 设置cookie的有效访问路径
+    path: /
+    # 设置HttpOnly属性
+    httpOnly: true
+    # 设置Cookie的过期时间，分钟为单位
+    maxAge: 5
+    # 设置Cookie的密钥
+    cipherKey: MDgBSEFqYIoWYezkWDywig==
